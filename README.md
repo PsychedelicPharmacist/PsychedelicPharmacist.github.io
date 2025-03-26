@@ -205,7 +205,22 @@ Instagram is the only social media platform used on the website:
   - Update all instances across all HTML files for consistency
   - Note: The site previously had LinkedIn and TikTok links which have been removed to focus only on Instagram
 
-### 3. Footer Contact Information
+### 3. Legal Pages and Terms Links
+
+All legal content is located in the `terms/` directory:
+
+- **Location**: Links to these pages appear in the footer of all HTML files
+- **Files to Edit**: 
+  - Main pages: All HTML files in the root directory
+  - Resource pages: All HTML files in the `resources/` directory
+  - Event pages: All HTML files in the `events/` directory
+- **What to Update**:
+  - Footer links for Terms of Service: `<a href="terms/terms.html">Terms of Service</a>` (or `<a href="../terms/terms.html">Terms of Service</a>` for subdirectory pages)
+  - Footer links for Privacy Policy: `<a href="terms/privacy.html">Privacy Policy</a>` (or `<a href="../terms/privacy.html">Privacy Policy</a>` for subdirectory pages)
+  - Footer links for Disclaimer: `<a href="terms/disclaimer.html">Disclaimer</a>` (or `<a href="../terms/disclaimer.html">Disclaimer</a>` for subdirectory pages)
+  - Important: Make sure paths are correct based on the file's location (use `../` prefix for files in subdirectories)
+
+### 4. Footer Contact Information
 
 Additional contact details may appear in the footer:
 
@@ -216,7 +231,7 @@ Additional contact details may appear in the footer:
   - Update phone numbers, addresses, or other contact information as needed
   - Update any associated links (mailto:, tel:, etc.)
 
-### 4. Contact Form Settings
+### 5. Contact Form Settings
 
 If the contact form sends to a specific email address:
 

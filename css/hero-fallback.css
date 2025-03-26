@@ -1,0 +1,85 @@
+/* 
+This file provides fallback styles when images are not available.
+It will be used for the demo version until proper images are provided.
+*/
+
+/* Fallback background for hero section */
+.hero {
+    background-image: none !important; /* Override the missing image */
+    background: linear-gradient(135deg, #121212, #2e1a47, #1a2e47);
+}
+
+/* Fallback for other background images */
+.about-hero {
+    background-image: none !important;
+    background: linear-gradient(135deg, #2e1a47, #1a2e47, #121212);
+}
+
+/* Fallback for profile image */
+.profile-image {
+    display: none;
+}
+
+/* Fix for missing icon fonts */
+.social-link::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--accent-1);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.linkedin::before {
+    background-color: #0077b5;
+}
+
+.instagram::before {
+    background-color: #e4405f;
+}
+
+.tiktok::before {
+    background-color: #000000;
+}
+
+/* Additional spacing for social links in header */
+.social-links .social-link {
+    margin: 0 10px;
+}
+
+/* Hide icon elements */
+.icon-linkedin, .icon-instagram, .icon-tiktok {
+    display: none;
+}
+
+/* Add text alternatives for social icons */
+.social-link.linkedin::after {
+    content: "Li";
+    font-weight: bold;
+}
+
+.social-link.instagram::after {
+    content: "Ig";
+    font-weight: bold;
+}
+
+.social-link.tiktok::after {
+    content: "Tk";
+    font-weight: bold;
+}
+
+/* For larger social links */
+.social-large .social-link {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px 15px;
+    background-color: rgba(40, 40, 45, 0.7);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.social-large .social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}

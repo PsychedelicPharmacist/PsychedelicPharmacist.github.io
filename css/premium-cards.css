@@ -1,0 +1,223 @@
+/* 
+HarmReductionAdvocate.com - Premium Card Effects
+High-end design elements for service cards
+*/
+
+/* Premium Card Container */
+.premium-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Premium Card Styling */
+.premium-card {
+  position: relative;
+  background: rgba(30, 30, 35, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(140, 82, 255, 0.3);
+}
+
+/* Card Header */
+.premium-card-header {
+  padding: 1.5rem;
+  padding-right: 3.5rem; /* Increased right padding to prevent icon overlap */
+  position: relative;
+  background: linear-gradient(135deg, rgba(140, 82, 255, 0.2), rgba(82, 217, 255, 0.1));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.premium-card-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.01em;
+  width: calc(100% - 50px); /* Ensure text doesn't overlap icon */
+  overflow-wrap: break-word; /* Allow long words to break */
+  word-wrap: break-word;
+}
+
+.premium-card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Card Body */
+.premium-card-body {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.premium-card-body p {
+  margin: 0 0 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.premium-card-body ul {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  list-style-type: none;
+}
+
+.premium-card-body ul li {
+  position: relative;
+  padding: 0.5rem 0;
+  padding-left: 1rem;
+}
+
+.premium-card-body ul li::before {
+  content: '•';
+  position: absolute;
+  left: -0.8rem;
+  color: var(--accent-1);
+  font-size: 1.2rem;
+}
+
+/* Card Icon */
+.premium-card-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-1);
+  font-size: 1.5rem;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover .premium-card-icon {
+  transform: rotate(360deg);
+  background: var(--accent-1);
+  color: var(--dark);
+}
+
+/* Card Footer */
+.premium-card-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Animated Border Effect */
+.premium-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px; 
+  padding: 1px; 
+  background: linear-gradient(
+    45deg, 
+    transparent 0%, 
+    var(--primary) 25%, 
+    var(--accent-1) 50%,
+    var(--secondary) 75%, 
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  mask: linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: borderAnimation 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.premium-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Premium Button Style */
+.premium-btn {
+  background: linear-gradient(45deg, var(--primary), var(--accent-1));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(140, 82, 255, 0.3);
+}
+
+.premium-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-1), var(--primary));
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.premium-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(140, 82, 255, 0.4);
+}
+
+.premium-btn:hover::before {
+  opacity: 1;
+}
+
+.premium-btn-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.premium-btn:hover .premium-btn-icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .premium-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
